@@ -20,7 +20,6 @@ public class TopicosController {
     @Autowired //Injeção de Dependência
     private TopicosRepository repository;
 
-
     //Criar um novo tópico
     @PostMapping
     @Transactional //Quando não é apenas uma leitura do banco
@@ -32,7 +31,6 @@ public class TopicosController {
         var uri = uriBuilder.path("/topicos/{id}").buildAndExpand(topico.getId()).toUri();
         return ResponseEntity.created(uri).body(new DadosDetalhamentoTopico(topico));
     }
-
 
     //Listar todos os tópicos
     @GetMapping
